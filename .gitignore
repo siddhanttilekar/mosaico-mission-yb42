@@ -1,0 +1,15 @@
+# Challenge data is distributed to applicants only - not republished here
+Hackathon-challenge/
+__MACOSX/
+*.mcap
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,4 @@
+mosaicolabs==0.7.0
+mcap-ros2-support>=0.5.5
+numpy>=2.0
+matplotlib>=3.9
