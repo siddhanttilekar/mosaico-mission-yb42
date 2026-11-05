@@ -86,7 +86,7 @@ The answer above is the log time, which is the value Mosaico returns.
 also happens **30+ times during normal trotting**, in 60–180 ms flight phases. Only the IMU reading zero g
 identifies true free fall.
 
-## Bonus: what the robot saw
+## What the robot saw
 
 The camera runs at about 8 fps, so it captured **exactly one frame while airborne**, at t + 42.036 s. It shows a
 **"DON'T PANIC"** sign.
@@ -101,7 +101,7 @@ t+43.80 s  [WARN] imu: transient on /imu/body, logged for review
 t+44.60 s  [INFO] recovered. don't panic.
 ```
 
-## Bonus: where the robot walked
+## Where the robot walked
 
 The patrol traces the word **MOSAICO**: 67.3 m in 86.9 s. The free fall happened on the **"A"**, at
 x = 6.00 m, y = 2.81 m.
@@ -140,8 +140,8 @@ pip install -r requirements.txt
 bash   scripts/01_ingest.sh          # ingest (exact command from the brief)
 python scripts/02_find_freefall.py   # the query  -> results/answer.json
 python scripts/03_verify_raw.py      # raw check  -> results/threshold_sweep.csv
-python scripts/04_what_it_saw.py     # bonus      -> results/what_it_saw.png
-python scripts/05_where_it_walked.py # bonus      -> results/where_it_walked.png
+python scripts/04_what_it_saw.py     # camera     -> results/what_it_saw.png
+python scripts/05_where_it_walked.py # trajectory -> results/where_it_walked.png
 python scripts/06_form_images.py     # simple images used in the submission form
 ```
 
