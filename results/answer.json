@@ -1,0 +1,25 @@
+{
+  "sequence": "spot_yb42",
+  "topic": "spot_yb42/imu/body",
+  "filter": "IMU.acceleration.z between [-1.0, 1.0] m/s^2",
+  "start_ns": 1795181862000000000,
+  "end_ns": 1795181862124000000,
+  "start_utc": "2026-11-20T13:37:42.000000000Z",
+  "end_utc": "2026-11-20T13:37:42.124000000Z",
+  "seconds_into_mission": 42.0,
+  "duration_ms": 124.0,
+  "windows_found": 1,
+  "mosaicod_request": {
+    "action": "topic_filter_clusterize",
+    "locator": "spot_yb42/imu/body",
+    "clustering_dt_ns": 100000000,
+    "ontology": {
+      "IMU.acceleration.z": {
+        "$between": [
+          -1.0,
+          1.0
+        ]
+      }
+    }
+  }
+}
