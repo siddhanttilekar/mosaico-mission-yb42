@@ -112,12 +112,29 @@ x = 6.00 m, y = 2.81 m.
 
 The dataset is a *Hitchhiker's Guide to the Galaxy* tribute:
 
-- the fall starts at exactly **42**.000 s, and the random seed is 42
+- the fall starts at exactly **42**.000 s
 - firmware `4.2.0-hhgttg`
-- a **towel** is spotted just before the fall
-- the robot sees **DON'T PANIC** while airborne
-- the last log line: *"so long, and thanks for all the fish"*
-- the mission starts at **13:37** UTC
+- a **towel** is spotted just before the fall (t+39.52 s): *"unidentified object ahead (class: towel?)"*
+- the robot sees **DON'T PANIC** while airborne, and the log says *"recovered. don't panic."* afterwards
+- the last log line: *"patrol complete. so long, and thanks for all the fish"*
+- the sequence metadata says *"nothing happened at 42s. probably."*
+- the mission starts at 13:37:00 UTC, so the fall happens at **13:37:42** (1337 + 42)
+
+Things I only found by reading the raw MCAP or comparing streams:
+
+- the MCAP file has metadata records that don't show up after ingest: `seed: 42`,
+  *"Something happens at 42 s."* and an outcome of *"success: travelled and stayed upright"*,
+  so even the automatic check missed the fall
+- the log counts **7 waypoint groups**, one for each letter of M-O-S-A-I-C-O
+- the fall lasts **124 ms**, which is exactly one camera period, so exactly one frame is captured mid-air
+
+And parts of the story that don't hold up:
+
+- the objective is a *"perimeter patrol"*, but the robot walks the word MOSAICO
+- the challenge says *"last night"* and the metadata says *"night shift"* and *"overcast"*, but the log is
+  timestamped 13:37 UTC and from about t+60 s the camera shows the robot's own sharp shadow
+- the fall is logged 1.8 s later as an *"imu: transient on /imu/body, logged for review"*, yet the
+  landing hits about 9 kN on the front-left foot and 3.1 g on the IMU
 
 ## Reproduce
 
